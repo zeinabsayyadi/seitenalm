@@ -1,0 +1,46 @@
+<nav
+  class="navbar"
+  [ngClass]="{ shadow: shadowApplied }"
+  (mouseover)="addShadow()"
+  (mouseout)="removeShadow()"
+>
+  <div class="navbar-container">
+    <div class="logo">
+      <img src="assets/logo.svg" alt="Logo" class="logo-img" />
+    </div>
+    <ul class="nav-links" [ngClass]="{ 'nav-open': isNavOpen }">
+      <li class="nav-item dropdown">
+        <a href="#" class="dropbtn">Children's hotel</a>
+        <div class="dropdown-content">
+          <a href="#">About Us</a>
+          <a href="#">Culinary delights</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Pictures & impressions</a>
+          <a href="#">Social Media</a>
+          <a href="#">Guest reviews & awards</a>
+          <a href="#">Location & Arrival</a>
+          <a href="#">Career at Seitenalm</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropbtn">Alpine experiences</a>
+        <div class="dropdown-content">
+          <a href="#">In & around the hotel</a>
+          <a href="#">Winter magic</a>
+          <a href="#">Summer holidays</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#">Bathing & Relaxing</a></li>
+      <li class="nav-item"><a href="#">Babies</a></li>
+      <li class="nav-item"><a href="#">Children</a></li>
+      <li class="nav-item"><a href="#">Kids</a></li>
+      <li class="nav-item"><a href="#">Teens</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-switch">EN</button>
+      <button class="nav-trigger" *ngIf="isMobile" (click)="toggleNav()">
+        &#9776;
+      </button>
+    </div>
+  </div>
+</nav>

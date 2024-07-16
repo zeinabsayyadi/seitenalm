@@ -1,0 +1,127 @@
+/* General Navbar Styles */
+.navbar {
+  background-color: #b02030;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  -webkit-box-shadow: 0px 100px 600px 0px rgba(133, 133, 133, 1);
+  -moz-box-shadow: 0px 100px 600px 0px rgba(133, 133, 133, 1);
+  box-shadow: 0px 100px 600px 0px rgba(133, 133, 133, 1);
+  z-index: 999;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.dropdown-content a {
+  color: #b02030;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.lang-switch {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nav-trigger {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    z-index: 10;
+  }
+  .nav-links.nav-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #b02030;
+    box-shadow: 0 4px 2px -2px gray;
+  }
+  .nav-item {
+    padding: 10px 20px;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+  .dropdown-content a {
+    padding: 10px 20px;
+  }
+  .nav-trigger {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+}
+
+/* Shadow on hover */
+.navbar.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,18 @@
+.intro-section {
+  background-image: url("/public/assets/intro-background.svg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 20px;
+  color: #d32f2f;
+  font-family: "Sansita-Swashed", sans-serif;
+}
+
+.intro-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro-section p {
+  font-size: 18px;
+}

@@ -1,0 +1,195 @@
+<div class="container">
+  <h2>Your holiday dates</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div
+      class="form-group"
+      [ngClass]="{
+        'has-error': isFieldInvalid('start') || isFieldInvalid('end')
+      }"
+    >
+      <label for="travel-period">Travel period *</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Travel period</mat-label>
+        <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+          <input
+            matStartDate
+            formControlName="start"
+            placeholder="Start date"
+          />
+          <input matEndDate formControlName="end" placeholder="End date" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('adults') }"
+    >
+      <label for="adults">Number of adults *</label>
+      <input type="number" id="adults" formControlName="adults" required />
+    </div>
+
+    <h3>Children</h3>
+    <p>
+      As a family specialist, it is important to us to provide you with a
+      tailor-made offer. Please therefore provide us with the first name and age
+      of your children/child.
+    </p>
+    <div formArrayName="children">
+      <div
+        *ngFor="let child of children.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div
+          class="form-group"
+          [ngClass]="{ 'has-error': isFieldInvalid('children.' + i + '.name') }"
+        >
+          <label for="child-name">Child's name *</label>
+          <input type="text" id="child-name" formControlName="name" required />
+        </div>
+
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error':
+              isFieldInvalid('children.' + i + '.day') ||
+              isFieldInvalid('children.' + i + '.month') ||
+              isFieldInvalid('children.' + i + '.year')
+          }"
+        >
+          <label for="birthday">Birthday *</label>
+          <div class="birthday-dropdowns">
+            <select formControlName="day" required>
+              <option value="" disabled>Day</option>
+              <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+            </select>
+            <select formControlName="month" required>
+              <option value="" disabled>Month</option>
+              <option *ngFor="let month of months" [value]="month.value">
+                {{ month.name }}
+              </option>
+            </select>
+            <select formControlName="year" required>
+              <option value="" disabled>Year</option>
+              <option *ngFor="let year of years" [value]="year">
+                {{ year }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="button-container">
+          <button
+            *ngIf="children.length > 1"
+            type="button"
+            class="remove-child-button"
+            (click)="removeChild(i)"
+          >
+            Remove child
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button type="button" class="add-child-button" (click)="addChild()">
+        Add Child
+      </button>
+    </div>
+
+    <h3>Your contact details</h3>
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('firstName') }"
+    >
+      <label for="first-name">First name *</label>
+      <input type="text" id="first-name" formControlName="firstName" required />
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('lastName') }"
+    >
+      <label for="last-name">Last name *</label>
+      <input type="text" id="last-name" formControlName="lastName" required />
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('gender') }"
+    >
+      <label for="gender">Gender *</label>
+      <select id="gender" formControlName="gender" required>
+        <option value="" disabled>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('email') }"
+    >
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" formControlName="email" required />
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('country') }"
+    >
+      <label for="country">Country *</label>
+      <select id="country" formControlName="country" required>
+        <option value="" disabled>Select Country</option>
+        <option *ngFor="let country of countries" [value]="country">
+          {{ country }}
+        </option>
+      </select>
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('postcode') }"
+    >
+      <label for="postcode">Postcode *</label>
+      <input type="text" id="postcode" formControlName="postcode" required />
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': isFieldInvalid('city') }">
+      <label for="city">City *</label>
+      <input type="text" id="city" formControlName="city" required />
+    </div>
+
+    <div
+      class="form-group"
+      [ngClass]="{ 'has-error': isFieldInvalid('street') }"
+    >
+      <label for="street">Street *</label>
+      <input type="text" id="street" formControlName="street" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" formControlName="phone" />
+    </div>
+
+    <div class="form-group">
+      <label for="requests">Questions or requests</label>
+      <textarea id="requests" formControlName="requests"></textarea>
+    </div>
+    <div
+      *ngIf="formError"
+      class="error-message"
+      style="
+        margin-bottom: 20px;
+        color: #d9534f;
+        font-family: 'Overlock', sans-serif;
+      "
+    >
+      Please fill out all required fields.
+    </div>
+    <button type="submit">Send an inquiry</button>
+  </form>
+</div>
