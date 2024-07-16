@@ -3,36 +3,26 @@
 /* Define @font-face for Satisfy */
 @font-face {
   font-family: "Sansita-Swashed";
-  src: url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Black.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf")
-      format("truetype");
-  font-weight: normal;
+  src: url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Black.ttf") format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
+  ont-weight: normal;
   font-style: normal;
 }
 
 /* Define @font-face for Overlock */
 @font-face {
   font-family: "Overlock";
-  src: url("/public/assets/fonts/Overlock/Overlock-Black.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Overlock/Overlock-BlackItalic.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Overlock/Overlock-Bold.ttf") format("truetype"),
-    url("/public/assets/fonts/Overlock/Overlock-BoldItalic.ttf")
-      format("truetype"),
-    url("/public/assets/fonts/Overlock/Overlock-Italic.ttf") format("truetype"),
-    url("/public/assets/fonts/Overlock/Overlock-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/Overlock/Overlock-Black.ttf") format("truetype"),
+    url("/assets/fonts/Overlock/Overlock-BlackItalic.ttf") format("truetype"),
+    url("/assets/fonts/Overlock/Overlock-Bold.ttf") format("truetype"),
+    url("/assets/fonts/Overlock/Overlock-BoldItalic.ttf") format("truetype"),
+    url("/assets/fonts/Overlock/Overlock-Italic.ttf") format("truetype"),
+    url("/assets/fonts/Overlock/Overlock-Regular.ttf") format("truetype");
 
   font-weight: normal;
   font-style: normal;
