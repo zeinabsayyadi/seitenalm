@@ -3,14 +3,21 @@
 /* Define @font-face for Satisfy */
 @font-face {
   font-family: "Sansita-Swashed";
-  src: url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Black.ttf") format("truetype"),
-    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf") format("truetype"),
-    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf") format("truetype"),
-    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf") format("truetype"),
-    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf") format("truetype"),
-    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf") format("truetype"),
-    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf") format("truetype");
-  ont-weight: normal;
+  src: url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Black.ttf")
+      format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Bold.ttf")
+      format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-ExtraBold.ttf")
+      format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Light.ttf")
+      format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Medium.ttf")
+      format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-Regular.ttf")
+      format("truetype"),
+    url("/assets/fonts/Sansita_Swashed/static/SansitaSwashed-SemiBold.ttf")
+      format("truetype");
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -36,8 +43,9 @@ body {
 }
 
 body {
-  margin: 0 64px;
+  padding: 0 64px;
   font-family: "Overlock", sans-serif;
+  background-image: url("/assets/recyclingpaper_pattern.png");
 }
 
 @media (max-width: 1000px) {
